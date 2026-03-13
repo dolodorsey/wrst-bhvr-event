@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "WRST BHVR — A HUGLIFE Experience",
-  description: "Chaos curated. Napkins fly.",
+  description: "Curated chaos. The night the room forgets itself.",
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body style={{margin:0,padding:0,background:"#07070a"}}>{children}</body>
+      <body style={{margin:0,padding:0,background:"#050508"}}>{children}</body>
     </html>
   );
 }
