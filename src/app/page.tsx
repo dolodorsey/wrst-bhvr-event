@@ -33,5 +33,45 @@ function Tickets(){const[sel,setSel]=useState(0);return(<section id="tickets" st
 <div style={{display:"flex",gap:"12px",flexWrap:"wrap"}}><a href="mailto:thekollectiveworldwide@gmail.com?subject=WRST BHVR Group Tickets" style={{fontFamily:F.sans,fontSize:"10px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:C.cream,background:C.red,padding:"12px 28px",textDecoration:"none",display:"inline-block"}}>Group Entry</a><a href="mailto:thekollectiveworldwide@gmail.com?subject=WRST BHVR Sponsorship" style={{fontFamily:F.sans,fontSize:"10px",fontWeight:500,letterSpacing:"0.12em",textTransform:"uppercase",color:C.cream,background:"transparent",border:`1px solid ${C.border}`,padding:"12px 24px",textDecoration:"none",display:"inline-block"}}>Sponsor</a></div></div></Reveal>
 <div style={{marginTop:"28px",display:"flex",gap:"32px",justifyContent:"center",flexWrap:"wrap"}}>{["Powered by Eventbrite","Secure Checkout","18+ Event","High Energy Event"].map(s=><div key={s} style={{fontFamily:F.mono,fontSize:"9px",color:"rgba(255,255,255,0.18)",letterSpacing:"0.2em"}}>{s}</div>)}</div>
 </div><style>{`@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}`}</style></section>);}
+
+function FAQ(){
+  const[open,setOpen]=useState<number|null>(null);
+  const items=[
+    {q:"What is WRST BHVR?",a:"WRST BHVR is Atlanta and DC's most talked-about nightlife brand — unapologetic energy, elite crowds, and sounds that hit different."},
+    {q:"What is Napkin Wars?",a:"Napkin Wars is a sister event under the WRST BHVR umbrella — same energy, same standard, different chapter."},
+    {q:"Do I need a ticket?",a:"Yes. Entry is ticket-only. Grab yours via Eventbrite before they're gone."},
+    {q:"What is the dress code?",a:"Dress to impress. No athletic wear, no exceptions. We maintain the standard so the room stays elite."},
+    {q:"Is there VIP access?",a:"Yes. VIP tables and bottle service are available. Email thekollectiveworldwide@gmail.com for bottle packages."},
+    {q:"Which cities does WRST BHVR operate in?",a:"Currently Atlanta and Washington DC. More cities coming in 2026."}
+  ];
+  return(
+<section id="faq" style={{background:C.base,padding:"80px clamp(32px,5vw,80px)",position:"relative",overflow:"hidden"}}>
+<Grain/>
+<div style={{maxWidth:"900px",margin:"0 auto",position:"relative",zIndex:1}}>
+<Reveal>
+<div style={{fontFamily:F.sans,fontSize:"9px",letterSpacing:"0.5em",textTransform:"uppercase",color:C.red,marginBottom:"16px"}}>Frequently Asked</div>
+<h2 style={{fontFamily:F.sans,fontSize:"clamp(32px,5vw,64px)",fontWeight:400,fontStyle:"italic",color:C.cream,marginBottom:"48px",lineHeight:0.95}}>Common Questions</h2>
+</Reveal>
+<div style={{display:"flex",flexDirection:"column",gap:"2px",background:`${C.red}20`}}>
+{items.map((item,i)=>(
+<Reveal key={i} d={i*0.05}>
+<div onClick={()=>setOpen(open===i?null:i)}
+style={{background:open===i?C.panel:C.surface,padding:"24px 28px",cursor:"pointer",
+borderLeft:`3px solid ${open===i?C.red:"transparent"}`,transition:"all 0.3s"}}
+onMouseEnter={e=>{if(open!==i)(e.currentTarget as HTMLDivElement).style.background=`${C.red}08`}}
+onMouseLeave={e=>{if(open!==i)(e.currentTarget as HTMLDivElement).style.background=C.surface}}
+>
+<div style={{display:"flex",justifyContent:"space-between",alignItems:"center",gap:"16px"}}>
+<div style={{fontFamily:F.sans,fontSize:"clamp(14px,1.5vw,18px)",fontStyle:"italic",color:C.cream,lineHeight:1.3}}>{item.q}</div>
+<div style={{color:C.red,fontSize:"20px",flexShrink:0,transition:"transform 0.3s",transform:open===i?"rotate(45deg)":"rotate(0deg)"}}>+</div>
+</div>
+{open===i&&<div style={{fontFamily:F.sans,fontSize:"14px",color:C.muted,lineHeight:1.75,marginTop:"12px",paddingRight:"32px"}}>{item.a}</div>}
+</div>
+</Reveal>
+))}</div>
+</div>
+</section>
+);}
+
 function Footer(){return(<footer style={{background:"#0D0E12",borderTop:`1px solid ${C.border}`,padding:"48px clamp(32px,5vw,80px) 32px"}}><div style={{maxWidth:"1400px",margin:"0 auto",display:"flex",justifyContent:"space-between",alignItems:"center",flexWrap:"wrap",gap:"24px"}}><div><div style={{fontFamily:F.display,fontSize:"22px",fontWeight:700,letterSpacing:"0.12em",color:C.cream,marginBottom:"4px"}}>WRST BHVR</div><div style={{fontFamily:F.mono,fontSize:"9px",letterSpacing:"0.3em",color:C.red}}>A KHG HUGLIFE EVENT</div></div><div style={{fontFamily:F.mono,fontSize:"10px",color:"rgba(255,255,255,0.18)"}}>© 2026 WRST BHVR. A KHG Enterprise.</div></div></footer>);}
-export default function WRSTBHVRSite(){return(<div style={{background:C.base}}><Nav/><Hero/><Tickets/><Footer/></div>);}
+export default function WRSTBHVRSite(){return(<div style={{background:C.base}}><Nav/><Hero/><Tickets/><FAQ/><Footer/></div>);}
