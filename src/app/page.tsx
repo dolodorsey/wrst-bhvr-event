@@ -120,10 +120,8 @@ function Hero(){
       <div style={{opacity:ld?1:0,transition:"opacity 0.8s ease 0.3s",marginBottom:"20px",display:"flex",gap:"20px",alignItems:"center"}}>
         <Tag text="System // Error // BHVR.EXE"/><div style={{width:"40px",height:"1px",background:C.red}}/><Tag text="ATL + DC · 2026" color={C.muted}/>
       </div>
-      <div style={{overflow:"hidden",marginBottom:"0px"}}><div style={{opacity:ld?1:0,transform:ld?"translateY(0)":"translateY(110%)",transition:"all 1.4s cubic-bezier(0.16,1,0.3,1) 0.5s"}}><GlitchText text="WRST" size="clamp(72px,15vw,220px)"/></div></div>
-      <div style={{overflow:"hidden",marginBottom:"8px"}}><div style={{opacity:ld?1:0,transform:ld?"translateY(0)":"translateY(110%)",transition:"all 1.4s cubic-bezier(0.16,1,0.3,1) 0.7s",display:"flex",alignItems:"flex-end",gap:"clamp(12px,2vw,24px)"}}>
-        <GlitchText text="BHVR" size="clamp(72px,15vw,220px)" color={C.red}/>
-        <div style={{width:"clamp(36px,5vw,64px)",height:"clamp(36px,5vw,64px)",borderRadius:"50%",border:`2px solid ${C.cream}`,display:"flex",alignItems:"center",justifyContent:"center",marginBottom:"clamp(8px,1.5vw,20px)",animation:"flicker 3s infinite"}}><span style={{fontSize:"clamp(18px,2.5vw,32px)"}}>&#9786;</span></div>
+      <div style={{overflow:"hidden",marginBottom:"8px"}}><div style={{opacity:ld?1:0,transform:ld?"translateY(0)":"translateY(60px)",transition:"all 1.4s cubic-bezier(0.16,1,0.3,1) 0.5s"}}>
+        <img src="/images/wrst-bhvr-logo.png" alt="WRST BHVR" style={{height:"clamp(80px,16vw,180px)",objectFit:"contain",filter:"drop-shadow(0 4px 32px rgba(187,44,53,0.4))"}}/>
       </div></div>
       <div style={{opacity:ld?1:0,transition:"opacity 1s ease 1.1s",marginBottom:"28px"}}><div style={{fontFamily:F.display,fontSize:"clamp(14px,2vw,26px)",fontWeight:400,letterSpacing:"0.25em",textTransform:"uppercase",color:C.steel}}>NAPKIN WARS EDITION</div></div>
       <p style={{fontFamily:F.sans,fontSize:"clamp(13px,1.1vw,16px)",lineHeight:1.9,color:C.muted,maxWidth:"440px",marginBottom:"36px",opacity:ld?1:0,transition:"opacity 1s ease 1.3s"}}>The aftermath of the best night you&apos;ll never fully remember. VIP tables. Bottle service. Evidence everywhere. Atlanta&apos;s most unapologetic nightlife experience.</p>
