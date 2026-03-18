@@ -121,7 +121,7 @@ function Hero(){
         <Tag text="System // Error // BHVR.EXE"/><div style={{width:"40px",height:"1px",background:C.red}}/><Tag text="ATL + DC · 2026" color={C.muted}/>
       </div>
       <div style={{overflow:"hidden",marginBottom:"8px"}}><div style={{opacity:ld?1:0,transform:ld?"translateY(0)":"translateY(60px)",transition:"all 1.4s cubic-bezier(0.16,1,0.3,1) 0.5s"}}>
-        <img src="/images/wrst-bhvr-logo.png" alt="WRST BHVR" style={{height:"clamp(80px,16vw,180px)",objectFit:"contain",filter:"drop-shadow(0 4px 32px rgba(187,44,53,0.4))"}}/>
+        <img src="/images/wrst-bhvr-logo.png" alt="WRST BHVR" style={{height:"clamp(140px,28vw,320px)",objectFit:"contain",filter:"drop-shadow(0 4px 48px rgba(187,44,53,0.5))"}}/>
       </div></div>
       <div style={{opacity:ld?1:0,transition:"opacity 1s ease 1.1s",marginBottom:"28px"}}><div style={{fontFamily:F.display,fontSize:"clamp(14px,2vw,26px)",fontWeight:400,letterSpacing:"0.25em",textTransform:"uppercase",color:C.steel}}>NAPKIN WARS EDITION</div></div>
       <p style={{fontFamily:F.sans,fontSize:"clamp(13px,1.1vw,16px)",lineHeight:1.9,color:C.muted,maxWidth:"440px",marginBottom:"36px",opacity:ld?1:0,transition:"opacity 1s ease 1.3s"}}>The aftermath of the best night you&apos;ll never fully remember. VIP tables. Bottle service. Evidence everywhere. Atlanta&apos;s most unapologetic nightlife experience.</p>
@@ -169,7 +169,7 @@ function EvidenceGallery(){
         )}
         {/* Full-width cinematic */}
         <Reveal d={0.3}><div style={{gridColumn:"1 / -1",position:"relative",overflow:"hidden",aspectRatio:"21/9",cursor:"crosshair",background:C.surface}}>
-          <img src="/images/scene-club-hq.jpg" alt="Club scene" style={{width:"100%",height:"100%",objectFit:"cover",transition:"transform 0.8s cubic-bezier(0.16,1,0.3,1),filter 0.8s"}} onMouseEnter={e=>{e.currentTarget.style.transform="scale(1.03)";e.currentTarget.style.filter="brightness(1.1)"}} onMouseLeave={e=>{e.currentTarget.style.transform="scale(1)";e.currentTarget.style.filter="brightness(1)"}}/>
+          <img src="/images/scene-club-hq.jpg" alt="Club scene" style={{width:"100%",height:"100%",objectFit:"cover",objectPosition:"center center",transition:"transform 0.8s cubic-bezier(0.16,1,0.3,1),filter 0.8s"}} onMouseEnter={e=>{e.currentTarget.style.transform="scale(1.03)";e.currentTarget.style.filter="brightness(1.1)"}} onMouseLeave={e=>{e.currentTarget.style.transform="scale(1)";e.currentTarget.style.filter="brightness(1)"}}/>
           <div style={{position:"absolute",inset:0,background:`linear-gradient(to right,${C.void}CC 0%,transparent 40%,transparent 60%,${C.void}CC 100%)`}}/>
           <div style={{position:"absolute",bottom:0,left:0,right:0,background:"linear-gradient(to top,rgba(8,9,12,0.95),transparent)",padding:"60px 32px 20px",display:"flex",justifyContent:"space-between",alignItems:"flex-end",flexWrap:"wrap",gap:"16px"}}>
             <div><div style={{fontFamily:F.mono,fontSize:"8px",letterSpacing:"0.4em",color:C.red,marginBottom:"4px"}}>ICONOGRAPHY // RITUAL // STATUS</div><div style={{fontFamily:F.display,fontSize:"clamp(18px,3vw,36px)",fontWeight:700,letterSpacing:"0.08em",color:C.cream}}>WRST BHVR: NPKN WARS</div></div>
