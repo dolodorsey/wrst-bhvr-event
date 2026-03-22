@@ -73,7 +73,7 @@ function Nav(){
         <span style={{fontFamily:F.display,fontSize:sc?"16px":"18px",fontWeight:700,letterSpacing:"0.18em",color:C.cream,transition:"all 0.4s"}}>WRST BHVR</span>
         <span style={{fontFamily:F.mono,fontSize:"7px",letterSpacing:"0.3em",color:C.red,marginTop:"-2px"}}>SYSTEM // ERROR</span>
       </div>
-      <div style={{display:"flex",gap:"8px",alignItems:"center"}}>
+      <div className="nl" style={{display:"flex",gap:"8px",alignItems:"center"}}>
         <a href="#evidence" style={{fontFamily:F.mono,fontSize:"9px",fontWeight:500,letterSpacing:"0.15em",textTransform:"uppercase",color:C.muted,textDecoration:"none",padding:"8px 16px"}}>Evidence</a>
         <a href="#tickets" style={{fontFamily:F.sans,fontSize:"10px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:C.void,background:C.red,padding:"10px 28px",textDecoration:"none",display:"inline-block"}}>Tickets</a>
       </div>
@@ -91,7 +91,17 @@ function Nav(){
       ::-webkit-scrollbar-track{background:${C.void}}
       ::-webkit-scrollbar-thumb{background:${C.red}40}
       img{user-select:none;-webkit-user-drag:none}
-    `}</style>
+    `}
+@media(max-width:768px){
+  .dg,.DG,[style*="gridTemplateColumns"]{grid-template-columns:1fr!important}
+  .nl,.desktop-nav{display:none!important}
+  .fg,.stat-grid,.feature-grid{grid-template-columns:1fr!important}
+  .eg{grid-template-columns:1fr!important}
+  h1,h2,.hero-title{word-break:break-word}
+  nav{padding:16px!important}
+  section{padding-left:16px!important;padding-right:16px!important}
+}
+</style>
   </>
 }
 
@@ -159,7 +169,7 @@ function EvidenceGallery(){
         <p style={{fontFamily:F.sans,fontSize:"clamp(13px,1.1vw,16px)",color:C.muted,maxWidth:"380px",lineHeight:1.8,marginTop:"16px"}}>What happens at WRST BHVR stays at WRST BHVR. Except the evidence. The evidence always survives.</p>
       </div></Reveal>
       {/* Gallery grid */}
-      <div style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"3px"}}>
+      <div className="dg" style={{display:"grid",gridTemplateColumns:"1fr 1fr",gap:"3px"}}>
         {[{src:"/images/scene-warehouse.jpg",label:"NPKN WARS // AFTERMATH",num:"01"},{src:"/images/scene-vip-table.jpg",label:"VIP // EVIDENCE COLLECTION",num:"02"}].map((img,i)=>
           <Reveal key={i} d={i*0.1}><div style={{position:"relative",overflow:"hidden",aspectRatio:"16/9",cursor:"crosshair",background:C.surface}}>
             <img src={img.src} alt={img.label} style={{width:"100%",height:"100%",objectFit:"cover",transition:"transform 0.8s cubic-bezier(0.16,1,0.3,1),filter 0.8s"}} onMouseEnter={e=>{e.currentTarget.style.transform="scale(1.05)";e.currentTarget.style.filter="brightness(1.1)"}} onMouseLeave={e=>{e.currentTarget.style.transform="scale(1)";e.currentTarget.style.filter="brightness(1)"}}/>
@@ -190,7 +200,7 @@ function FlyerShowcase(){
     <div style={{maxWidth:"1400px",margin:"0 auto",padding:"0 clamp(32px,5vw,80px)",position:"relative",zIndex:10}}>
       <Reveal><div style={{display:"flex",alignItems:"center",gap:"16px",marginBottom:"16px"}}><Tag text="Promotional Material"/><div style={{flex:1,height:"1px",background:C.border}}/></div>
       <h2 style={{fontFamily:F.display,fontSize:"clamp(36px,6vw,80px)",fontWeight:700,letterSpacing:"0.04em",lineHeight:0.9,color:C.cream,marginBottom:"48px"}}>THE FLYERS</h2></Reveal>
-      <div style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"12px"}}>
+      <div className="dg" style={{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:"12px"}}>
         {FLYERS.map((f,i)=><Reveal key={i} d={i*0.1}><div onClick={()=>setActive(i)} style={{position:"relative",overflow:"hidden",aspectRatio:"2/3",cursor:"pointer",border:active===i?`1px solid ${C.red}`:`1px solid ${C.border}`,transition:"all 0.5s cubic-bezier(0.16,1,0.3,1)",transform:active===i?"scale(1.02)":"scale(1)"}}>
           <img src={f.src} alt={f.label} style={{width:"100%",height:"100%",objectFit:"cover",transition:"transform 0.6s cubic-bezier(0.16,1,0.3,1)"}} onMouseEnter={e=>{e.currentTarget.style.transform="scale(1.06)"}} onMouseLeave={e=>{e.currentTarget.style.transform="scale(1)"}}/>
           <div style={{position:"absolute",bottom:0,left:0,right:0,background:`linear-gradient(to top,${C.void}F0,transparent)`,padding:"32px 12px 12px"}}><div style={{fontFamily:F.mono,fontSize:"8px",letterSpacing:"0.3em",color:active===i?C.red:C.muted,transition:"color 0.3s"}}>{f.label}</div></div>
@@ -209,7 +219,7 @@ function FlyerShowcase(){
 function BrandStory(){
   return<section style={{background:C.void,position:"relative",overflow:"hidden",padding:"120px 0"}}>
     <Grain/><GridBG/>
-    <div style={{maxWidth:"1400px",margin:"0 auto",padding:"0 clamp(32px,5vw,80px)",position:"relative",zIndex:10,display:"grid",gridTemplateColumns:"1fr 1fr",gap:"80px",alignItems:"center"}}>
+    <div className="dg" style={{maxWidth:"1400px",margin:"0 auto",padding:"0 clamp(32px,5vw,80px)",position:"relative",zIndex:10,display:"grid",gridTemplateColumns:"1fr 1fr",gap:"80px",alignItems:"center"}}>
       <RevealX><div style={{position:"relative",overflow:"hidden",aspectRatio:"4/5"}}>
         <img src="/images/scene-evidence.jpg" alt="Evidence" style={{width:"100%",height:"100%",objectFit:"cover",filter:"brightness(0.85) contrast(1.1)"}}/>
         <div style={{position:"absolute",inset:0,background:`linear-gradient(135deg,${C.void}60,transparent 50%,${C.red}15)`}}/>
