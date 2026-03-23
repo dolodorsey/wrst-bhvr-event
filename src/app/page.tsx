@@ -43,7 +43,23 @@ const FLYERS = [
 ];
 
 /* ── HOOKS ── */
-function useInView(t=0.12){const ref=useRef<HTMLDivElement>(null);const[v,setV]=useState(false);useEffect(()=>{const el=ref.current;if(!el)return;const o=new IntersectionObserver(([e])=>{if(e.isIntersecting)setV(true)},{threshold:t});o.observe(el);return()=>o.disconnect()},[t]);return[ref,v] as const}
+function useInView(t=0.12){const ref=useRef<HTMLDivElement>(null
+
+      {/* VENUE */}
+      <div style={{padding:"48px 24px", textAlign:"center", borderTop:"1px solid rgba(255,255,255,0.07)"}}>
+        <p style={{fontSize:"10px", letterSpacing:"4px", color:"#C9A84C", textTransform:"uppercase", marginBottom:"12px", fontFamily:"'DM Sans',system-ui,sans-serif"}}>Location</p>
+        <h3 style={{fontFamily:"'Cormorant Garamond',Georgia,serif", fontSize:"clamp(22px,4vw,38px)", fontWeight:300, color:"#fff", marginBottom:"8px"}}>
+          The Gallery Complex
+        </h3>
+        <p style={{color:"#666", fontSize:"13px", letterSpacing:"1px", marginBottom:"20px", fontFamily:"'DM Sans',system-ui,sans-serif"}}>
+          245 Ted Turner Drive SW, Atlanta, GA 30303
+        </p>
+        <a href="https://maps.google.com/?q=245+Ted+Turner+Drive+SW+Atlanta+GA+30303" target="_blank" rel="noopener noreferrer"
+          style={{display:"inline-block", padding:"11px 26px", border:"1px solid rgba(201,168,76,0.35)", color:"#C9A84C", fontSize:"11px", letterSpacing:"3px", textTransform:"uppercase", textDecoration:"none", fontFamily:"'DM Sans',system-ui,sans-serif"}}>
+          Get Directions →
+        </a>
+      </div>
+);const[v,setV]=useState(false);useEffect(()=>{const el=ref.current;if(!el)return;const o=new IntersectionObserver(([e])=>{if(e.isIntersecting)setV(true)},{threshold:t});o.observe(el);return()=>o.disconnect()},[t]);return[ref,v] as const}
 function useScrollY(){const[y,setY]=useState(0);useEffect(()=>{const h=()=>setY(window.scrollY);window.addEventListener("scroll",h,{passive:true});return()=>window.removeEventListener("scroll",h)},[]);return y}
 function useMouse(){const[p,setP]=useState({x:0.5,y:0.5});useEffect(()=>{const h=(e:MouseEvent)=>setP({x:e.clientX/window.innerWidth,y:e.clientY/window.innerHeight});window.addEventListener("mousemove",h,{passive:true});return()=>window.removeEventListener("mousemove",h)},[]);return p}
 
