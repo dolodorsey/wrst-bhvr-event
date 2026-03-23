@@ -31,9 +31,9 @@ const F = {
 };
 
 const TICKETS = [
-  { date:"May 30, 2026", day:"FRIDAY", url:"https://www.eventbrite.com/e/napkin-wars-tickets-1983443338418", event:"NAPKIN WARS", city:"Atlanta", edition:"VOL. I" },
-  { date:"Jul 25, 2026", day:"SATURDAY", url:"https://www.eventbrite.com/e/napkin-wars-tickets-1983443502910", event:"NAPKIN WARS", city:"Atlanta", edition:"VOL. II" },
-  { date:"Sep 26, 2026", day:"SATURDAY", url:"https://www.eventbrite.com/e/napkin-wars-tickets-1983447530958", event:"NAPKIN WARS", city:"Atlanta", edition:"VOL. III" },
+  { date:"May 30, 2026", day:"FRIDAY", url:"https://huglife.vercel.app/tickets", event:"NAPKIN WARS", city:"Atlanta", edition:"VOL. I" },
+  { date:"Jul 25, 2026", day:"SATURDAY", url:"https://huglife.vercel.app/tickets", event:"NAPKIN WARS", city:"Atlanta", edition:"VOL. II" },
+  { date:"Sep 26, 2026", day:"SATURDAY", url:"https://huglife.vercel.app/tickets", event:"NAPKIN WARS", city:"Atlanta", edition:"VOL. III" },
 ];
 const FLYERS = [
   { src:"/images/flyer-main.jpg", label:"NAPKIN WARS — MAIN" },
