@@ -17,10 +17,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-              <script
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: '{"@context": "https://schema.org", "@type": "Event", "name": "WRST BHVR: Napkin Wars", "description": "Atlanta's most unhinged nightlife event. Where napkins fly and the party goes up.", "url": "https://wrstbhvr.com", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Place", "name": "Atlanta, GA", "address": {"@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA"}}, "organizer": {"@type": "Organization", "name": "HugLife Events", "url": "https://huglife.com"}}'
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Event",
+              "name": "WRST BHVR: Napkin Wars",
+              "description": "Atlanta's most unhinged nightlife event.",
+              "url": "https://wrstbhvr.com",
+              "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+              "location": {
+                "@type": "Place",
+                "name": "Atlanta, GA",
+                "address": { "@type": "PostalAddress", "addressLocality": "Atlanta", "addressRegion": "GA" }
+              },
+              "organizer": {
+                "@type": "Organization",
+                "name": "HugLife Events",
+                "url": "https://huglife.com"
+              }
+            })
           }}
         />
       </head>
