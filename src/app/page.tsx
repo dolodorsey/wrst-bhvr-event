@@ -78,7 +78,7 @@ function Nav(){
         <a href="#tickets" style={{fontFamily:F.sans,fontSize:"10px",fontWeight:700,letterSpacing:"0.12em",textTransform:"uppercase",color:C.void,background:C.red,padding:"10px 28px",textDecoration:"none",display:"inline-block"}}>Tickets</a>
       </div>
     </nav>
-    <style>{`
+    <style dangerouslySetInnerHTML={{__html:`
       @keyframes scanDown{0%{top:-10%}100%{top:110%}}
       @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
       @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -91,17 +91,16 @@ function Nav(){
       ::-webkit-scrollbar-track{background:${C.void}}
       ::-webkit-scrollbar-thumb{background:${C.red}40}
       img{user-select:none;-webkit-user-drag:none}
-    `}
-@media(max-width:768px){
-  .dg,.DG,[style*="gridTemplateColumns"]{grid-template-columns:1fr!important}
-  .nl,.desktop-nav{display:none!important}
-  .fg,.stat-grid,.feature-grid{grid-template-columns:1fr!important}
-  .eg{grid-template-columns:1fr!important}
-  h1,h2,.hero-title{word-break:break-word}
-  nav{padding:16px!important}
-  section{padding-left:16px!important;padding-right:16px!important}
-}
-</style>
+      @media(max-width:768px){
+        .dg,.DG,[style*="gridTemplateColumns"]{grid-template-columns:1fr!important}
+        .nl,.desktop-nav{display:none!important}
+        .fg,.stat-grid,.feature-grid{grid-template-columns:1fr!important}
+        .eg{grid-template-columns:1fr!important}
+        h1,h2,.hero-title{word-break:break-word}
+        nav{padding:16px!important}
+        section{padding-left:16px!important;padding-right:16px!important}
+      }
+    `}} />
   </>
 }
 
